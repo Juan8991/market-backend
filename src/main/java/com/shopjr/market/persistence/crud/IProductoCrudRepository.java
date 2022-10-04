@@ -15,7 +15,7 @@ public interface IProductoCrudRepository extends CrudRepository<Producto,Long> {
      * @param idCategoria
      * @return
      */
-    List<Producto> finfByIdCategoriaOrderByPrecioVentaAsc(Long idCategoria);
+    List<Producto> findByIdCategoriaOrderByPrecioVentaAsc(Long idCategoria);
 
     /**
      * Traer una lista de productos por categoria y los ordena por nombre
@@ -23,7 +23,7 @@ public interface IProductoCrudRepository extends CrudRepository<Producto,Long> {
      * @param idCategoria
      * @return
      */
-    List<Producto> finfByIdCategoriaOrderByNombreDsc(Long idCategoria);
+    List<Producto> findByIdCategoriaOrderByNombreDesc(Long idCategoria);
 
     /**
      * Obtiene una lista de productos de tipo Optional por cantidad de stock
@@ -32,5 +32,5 @@ public interface IProductoCrudRepository extends CrudRepository<Producto,Long> {
      * @param estado
      * @return
      */
-    Optional<List<Producto>> finfByCantidadStockLessThanAndEstado(Integer cantidadStock, Boolean estado);
+    Optional<List<Producto>> findByCantidadStockLessThanAndEstado(Integer cantidadStock, Boolean estado);
 }

@@ -12,22 +12,19 @@ public class ProductoCrudRepository {
 
     private IProductoCrudRepository repository;
 
-    public ProductoCrudRepository(IProductoCrudRepository repository) {
-        this.repository = repository;
-    }
 
     public List<Producto> getProducts() {
         return (List<Producto>) repository.findAll();
     }
 
     public List<Producto> getProductsByCategoryOrderByNombre(Long idCategoria){
-        return repository.finfByIdCategoriaOrderByNombreDsc(idCategoria);
+        return repository.findByIdCategoriaOrderByNombreDesc(idCategoria);
     }
     public List<Producto> getProductsByCategoryOrderByPrecioVenta(Long idCategoria){
-        return repository.finfByIdCategoriaOrderByPrecioVentaAsc(idCategoria);
+        return repository.findByIdCategoriaOrderByPrecioVentaAsc(idCategoria);
     }
     public Optional<List<Producto>> getProductsByCantidadStockLessThan(Integer cantidadStock, Boolean estado){
-        return repository.finfByCantidadStockLessThanAndEstado(cantidadStock, estado);
+        return repository.findByCantidadStockLessThanAndEstado(cantidadStock, estado);
     }
     public Optional<Producto> getProductoById(Long id){
         return repository.findById(id);
