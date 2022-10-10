@@ -4,6 +4,7 @@ package com.shopjr.market.persistence.entity;
 import lombok.Getter;
 import lombok.Setter;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -27,7 +28,7 @@ public class Compra {
     private Long idCompra;
 
     @Column(name = "id_cliente")
-    private Long idCliente;
+    private String idCliente;
 
     private LocalDateTime fecha;
 
@@ -42,8 +43,8 @@ public class Compra {
     @JoinColumn(name = "id_cliente", insertable = false,updatable = false)
     private Cliente cliente;
 
-    @OneToMany(mappedBy = "producto")
-    private List<ComprasProducto> producto;
+    @OneToMany(mappedBy = "compra",cascade = {CascadeType.ALL})
+    private List<ComprasProducto> productos;
 
 
 

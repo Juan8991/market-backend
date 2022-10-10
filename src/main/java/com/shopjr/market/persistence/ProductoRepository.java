@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Repository
-public class ProductoCrudRepository implements IProductRepository {
+public class ProductoRepository implements IProductRepository {
 
     @Autowired
     private IProductoCrudRepository repository;
