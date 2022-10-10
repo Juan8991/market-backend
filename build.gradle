@@ -5,7 +5,7 @@ plugins {
 }
 
 group = 'com.shopjr'
-version = '0.0.1-SNAPSHOT'
+version = '1.0'
 sourceCompatibility = '11'
 
 repositories {
@@ -20,6 +20,7 @@ dependencies {
 	runtimeOnly 'org.postgresql:postgresql'
 	implementation 'org.mapstruct:mapstruct:1.5.2.Final'
 	annotationProcessor 'org.mapstruct:mapstruct-processor:1.5.2.Final'
+	implementation 'org.springdoc:springdoc-openapi-ui:1.6.11'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 

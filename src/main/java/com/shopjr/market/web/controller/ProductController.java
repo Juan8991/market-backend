@@ -3,6 +3,7 @@ package com.shopjr.market.web.controller;
 
 import com.shopjr.market.domain.Product;
 import com.shopjr.market.domain.service.ProductService;
+import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -30,6 +31,7 @@ public class ProductController {
     @Autowired
     private ProductService productService;
 
+    @Operation(summary = "Get all supermarket products")
     @GetMapping()
     public ResponseEntity<List<Product>> getAllProducts(){
 
